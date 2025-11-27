@@ -2,415 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Spoovel Fox’s Anvil Blueprint</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Spoovel / Spuval Mechanism - Commons License and Functional Schematic." />
+  <title>Spoovel · Schematic (HTML)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       line-height: 1.6;
+      color: #e5e5e5;
+      background-color: #121212;
       margin: 0;
       padding: 0;
-      background: #111;
-      color: #f5f5f5;
-    }
-    a {
-      color: #9cd3ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .page {
-      max-width: 880px;
-      margin: 0 auto;
-      padding: 1.5rem 1.25rem 2.5rem;
     }
     header {
       border-bottom: 1px solid #333;
-      padding-bottom: 1rem;
-      margin-bottom: 1.5rem;
+      padding: 12px 20px;
     }
-    header h1 {
-      margin: 0 0 0.25rem;
-      font-size: 1.6rem;
-    }
-    header p {
-      margin: 0.25rem 0;
-      font-size: 0.95rem;
-      opacity: 0.9;
-    }
-    .tagline {
-      font-style: italic;
-      opacity: 0.85;
-    }
-    h2 {
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-      font-size: 1.25rem;
-    }
-    h3 {
-      margin-top: 1.25rem;
-      margin-bottom: 0.5rem;
-      font-size: 1.05rem;
-    }
-    p {
-      margin: 0.5rem 0 0.5rem;
-    }
-    ul {
-      margin: 0.25rem 0 0.5rem 1.25rem;
-      padding-left: 0.75rem;
-    }
-    li {
-      margin: 0.25rem 0;
-    }
-    hr {
-      border: none;
-      border-top: 1px solid #333;
-      margin: 2rem 0 1.75rem;
-    }
-    .section-label {
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      font-size: 0.7rem;
-      color: #aaa;
-      margin-bottom: 0.25rem;
-    }
-    code, pre {
-      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-    }
-    pre {
-      background: #1b1b1b;
-      padding: 1rem;
-      overflow-x: auto;
-      border-radius: 6px;
-      border: 1px solid #333;
-      white-space: pre-wrap;
-    }
-    .note {
+    header a {
+      color: #9cd3ff;
+      text-decoration: none;
       font-size: 0.9rem;
-      opacity: 0.9;
     }
+    header a:hover { text-decoration: underline; }
+    main {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 32px 20px 40px;
+    }
+    h1, h2 {
+      line-height: 1.3;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+    }
+    p, li { margin-bottom: 0.75rem; }
+    ul { padding-left: 20px; }
   </style>
 </head>
-
 <body>
-  <div class="page">
-    <header>
-      <p><a href="../index.html">← Back to Fox’s Anvil</a></p>
-      <h1>Spoovel Mechanism · Fox’s Anvil Blueprint</h1>
-      <p class="tagline">
-        Spoovel / Spuval / Spooval / Spovel — a low-tech, field-repairable, sack-filling and binding tool
-        for restoration, flood response, and community resilience.
-      </p>
-      <p class="note">
-        This document serves as a combined commons license, engineering brief, and functional schematic for
-        the Spoovel Mechanism. It is intentionally written in human-readable language with enough structure
-        for builders, tinkerers, and allied engineers to adapt.
-      </p>
-    </header>
+  <header>
+    <a href="../index.html">← Back to Spoovel overview</a>
+  </header>
 
-    <section id="license">
-      <div class="section-label">Section 1</div>
-      <h2>Commons License (Draft · Open Hardware)</h2>
-      <p>
-        The Spoovel Mechanism is offered as part of an open resilience tools commons. It borrows the spirit
-        of Creative Commons BY-SA and the Open Source Hardware Definition, translated into plain language.
-      </p>
+  <main>
+    <h1>Spoovel · Schematic (V1)</h1>
 
-      <h3>1. Ownership & Intent</h3>
-      <p>
-        This design is released by the originator as a gift to the Commons. There is no intention to patent,
-        enclose, or otherwise lock the design away from communities in need. It is meant to:
-      </p>
-      <ul>
-        <li>Support restoration and resilience work at many scales.</li>
-        <li>Remain repairable in the field with common tools and scrap materials.</li>
-        <li>Encourage local adaptation, iteration, and shared improvements.</li>
-      </ul>
+    <p>
+      This page is the working HTML schematic for the Spoovel mechanism. It is meant
+      to stay simple, readable, and easy to update. Later, this can be printed to PDF
+      if needed, but for now <strong>this HTML page is the source of truth.</strong>
+    </p>
 
-      <h3>2. Permissions</h3>
-      <p>You are free to:</p>
-      <ul>
-        <li><strong>Build</strong> the Spoovel Mechanism for your own use or for community projects.</li>
-        <li><strong>Adapt</strong> the design to local materials, conditions, and needs.</li>
-        <li><strong>Share</strong> your modified versions, including schematics and documentation.</li>
-        <li><strong>Sell</strong> units or services built around the mechanism, provided you honor the sharing terms below.</li>
-      </ul>
+    <h2>Purpose</h2>
+    <ul>
+      <li>Low-tech, field-repairable sack-filling tool.</li>
+      <li>Supports flood response, erosion control, and restoration work.</li>
+      <li>Reduces strain on workers compared to bending and scooping by hand.</li>
+    </ul>
 
-      <h3>3. Obligations (Share-Alike)</h3>
-      <p>If you build upon this design, you agree to:</p>
-      <ul>
-        <li>
-          Keep your derivative designs in the Commons by sharing schematics, changes, and improvements
-          under similar open terms.
-        </li>
-        <li>
-          Clearly acknowledge the Spoovel Mechanism and the Fox’s Anvil: Open Resilience Tools as part of
-          the design lineage.
-        </li>
-        <li>
-          Avoid filing patents or other exclusionary claims that would prevent others from building or
-          improving the mechanism.
-        </li>
-      </ul>
+    <h2>Main Parts</h2>
+    <ul>
+      <li>Frame with front hooks to hold the sack at working height.</li>
+      <li>Chute or funnel that guides soil or material into the sack.</li>
+      <li>Cam / lever or pedal that gives a repeatable “cycle” for shake + close.</li>
+      <li>Simple closure area where the sack is twisted and tied, then released.</li>
+    </ul>
 
-      <h3>4. No Warranty</h3>
-      <p>
-        This design is offered “as is”, without warranty or guarantee of fitness for any particular purpose.
-        Builders and operators accept responsibility for:
-      </p>
-      <ul>
-        <li>Safe construction practices.</li>
-        <li>Local risk assessment and mitigation.</li>
-        <li>Training of operators and maintainers.</li>
-        <li>Compliance with any relevant local regulations.</li>
-      </ul>
+    <h2>One Work Cycle (Example)</h2>
+    <ol>
+      <li>Hang empty sack on the front hooks.</li>
+      <li>Shovel material into the chute until sack is near the fill mark.</li>
+      <li>Use the pedal/lever once to shake/settle the load.</li>
+      <li>Gather the top of the sack, twist or fold to close.</li>
+      <li>Tie or strap the closure, then release the sack to a pallet or slide.</li>
+      <li>Hang the next empty sack and repeat.</li>
+    </ol>
 
-      <h3>5. Attribution</h3>
-      <p>
-        When referencing or building from this design, credit as:
-      </p>
-      <pre>Spoovel Mechanism — Fox’s Anvil: Open Resilience Tools — Jacobo Hernandez Durbin, 2025.</pre>
-    </section>
-
-    <hr />
-
-    <section id="functional-brief">
-      <div class="section-label">Section 2</div>
-      <h2>Functional Brief</h2>
-
-      <h3>2.1 Purpose</h3>
-      <p>
-        The Spoovel Mechanism is a low-tech, modular tool intended to make the repeated task of
-        filling, closing, and deploying sacks:
-      </p>
-      <ul>
-        <li>Faster and more consistent than fully manual methods.</li>
-        <li>Less physically punishing for workers and volunteers.</li>
-        <li>Less dependent on diesel-heavy equipment and fragile supply chains.</li>
-      </ul>
-
-      <p>Typical use-cases include:</p>
-      <ul>
-        <li>Flood response and temporary levee construction.</li>
-        <li>Erosion control and slope stabilization.</li>
-        <li>Soil and compost movement for restoration projects.</li>
-        <li>Seed, biochar, or amendment mixes for agroecology.</li>
-      </ul>
-
-      <h3>2.2 Scale & Modularity</h3>
-      <p>
-        The core Spoovel unit is designed for:
-      </p>
-      <ul>
-        <li>Two–four human operators working in rotation.</li>
-        <li>Portable deployment in the back of a truck, on a trailer, or on-site frames.</li>
-        <li>Construction from common steel profiles, bicycle parts, and scrap components.</li>
-      </ul>
-
-      <p>
-        Additional modules (such as a Commons Conveyor, sorting screens, or a MedicineWheel data interface)
-        can be bolted on without redesigning the core mechanism.
-      </p>
-
-      <h3>2.3 Key Design Principles</h3>
-      <ul>
-        <li><strong>Low-tech / high-resilience:</strong> Prefer gravity, levers, cams, and pedals over electronics.</li>
-        <li><strong>Field-repairable:</strong> All wear points accessible; replacement parts sourceable locally.</li>
-        <li><strong>Repeatable cycle:</strong> A clear, repeatable motion that workers can learn quickly.</li>
-        <li><strong>Ergonomic:</strong> Reduce awkward bending, twisting, and lifting where possible.</li>
-      </ul>
-    </section>
-
-    <hr />
-
-    <section id="mechanism">
-      <div class="section-label">Section 3</div>
-      <h2>Mechanism Overview</h2>
-
-      <h3>3.1 Major Subsystems</h3>
-      <p>The Spoovel Mechanism can be understood as four primary subsystems:</p>
-      <ul>
-        <li><strong>Frame & Sack Station:</strong> Fixed structure holding sacks at working height.</li>
-        <li><strong>Material Intake & Drop:</strong> Where soil or material is guided into the sack mouth.</li>
-        <li><strong>Cycling Arm / Cam System:</strong> Converts human input (pedal, handle, or crank) into a regular cycle.</li>
-        <li><strong>Closure & Release:</strong> How the sack is twisted, tied, or otherwise sealed and released.</li>
-      </ul>
-
-      <h3>3.2 Frame & Sack Station</h3>
-      <ul>
-        <li>Built from steel angle, tube, or repurposed rack material.</li>
-        <li>Front station features hooks or clamps to hold sack tops open.</li>
-        <li>Height chosen so operators can stand upright with minimal forward bend.</li>
-        <li>Optional footplate or platform for worker stability and leveling on rough ground.</li>
-      </ul>
-
-      <h3>3.3 Material Intake</h3>
-      <ul>
-        <li>A funnel or chute guides material from shovels, small loaders, or conveyors.</li>
-        <li>Chute mouth is wide enough for two shovelers to work without clashing.</li>
-        <li>Chute exit is positioned just above the open sack mouth.</li>
-        <li>Optional “spoiler” plates inside the chute diffuse impact and reduce sack tearing.</li>
-      </ul>
-
-      <h3>3.4 Cycling Arm / Cam</h3>
-      <p>
-        A simple cam wheel, crank, or rocking beam governs the rhythm of the machine. Human input can be:
-      </p>
-      <ul>
-        <li>Foot pedal (treadle-style).</li>
-        <li>Hand lever or crank.</li>
-        <li>Tandem arrangement where one operator pedals while others shovel and handle sacks.</li>
-      </ul>
-
-      <p>
-        The cam does <em>not</em> move the soil; it moves the work around the sack: clamping, shaking, twisting, and releasing.
-      </p>
-
-      <h3>3.5 Closure & Release</h3>
-      <ul>
-        <li>
-          A pair of opposed arms or grippers hold the top of the sack and twist or fold it as the cam cycles.
-        </li>
-        <li>
-          A simple tie or clip mechanism (wire, cord, or strap) is engaged at the end of the twist.
-        </li>
-        <li>
-          The cam then opens the grippers and allows the sealed sack to drop to a waiting pallet or slide.
-        </li>
-      </ul>
-    </section>
-
-    <hr />
-
-    <section id="cycle">
-      <div class="section-label">Section 4</div>
-      <h2>Functional Cycle (One Example)</h2>
-
-      <p>
-        This section describes a possible full cycle for one Spoovel unit. Actual implementations may vary.
-      </p>
-
-      <pre>
-1. PREPARE
-   - Empty sack is placed on hooks/clamps at the front station.
-   - Operator checks that chute is clear and pallet/slide is in position.
-
-2. FILL
-   - One or two workers shovel material into the intake chute.
-   - Material drops through the chute into the sack.
-   - A gentle shake, governed by the cam or a foot tap, helps settle material.
-
-3. LEVEL / CHECK
-   - Operator visually checks approximate fill level (by line, weight feel, or simple gauge).
-   - If under-filled, additional shovels are added; if overfilled, excess is removed.
-
-4. CLOSE
-   - Operator gathers the top of the sack and places it into the closure arms.
-   - With a single pedal/lever stroke, the cam engages:
-       - Arms twist, fold, or pinch the sack top into a consistent closure shape.
-
-5. TIE / SECURE
-   - Tie material (wire, cord, strap) is looped and cinched around the twisted/closed section.
-   - This can be manual or assisted by a simple tie guide on the frame.
-
-6. RELEASE
-   - Cam completes its cycle and opens the arms.
-   - Sack drops to pallet/slide.
-   - Operator clears station and hangs the next empty sack.
-
-7. RESET
-   - Pedal/lever returns to neutral.
-   - Frame and chute are visually checked before repeating the cycle.
-      </pre>
-    </section>
-
-    <hr />
-
-    <section id="materials">
-      <div class="section-label">Section 5</div>
-      <h2>Materials & Build Notes (High-Level)</h2>
-
-      <p>
-        The Spoovel Mechanism is intentionally specified at a high level so that local builders can
-        adapt to available materials.
-      </p>
-
-      <h3>5.1 Typical Material Sources</h3>
-      <ul>
-        <li>Scrap steel angle, tube, or channel for the frame.</li>
-        <li>Old bicycle frames, cranks, or hubs for cam and pedal assemblies.</li>
-        <li>Reclaimed conveyor or chute pieces for the material intake.</li>
-        <li>Springs, hinges, or clamps from agricultural or workshop scrap bins.</li>
-      </ul>
-
-      <h3>5.2 Tools Required (Minimum)</h3>
-      <ul>
-        <li>Welder (MIG or stick) or strong bolted construction methods.</li>
-        <li>Angle grinder or hacksaw for cutting steel.</li>
-        <li>Drill and bits for pivot points and bolt holes.</li>
-        <li>Measuring tools, square, and basic layout tools.</li>
-      </ul>
-
-      <h3>5.3 Safety Considerations</h3>
-      <ul>
-        <li>All moving parts should have guards where pinch or crush hazards exist.</li>
-        <li>Operators should be trained in the cycle and shown safe zones around the frame.</li>
-        <li>Emergency stop: a simple way to disengage or block the cam in case of trouble.</li>
-        <li>Regular inspection of welds, pivots, and hooks for fatigue and cracking.</li>
-      </ul>
-    </section>
-
-    <hr />
-
-    <section id="adaptation">
-      <div class="section-label">Section 6</div>
-      <h2>Adaptation & Field Notes</h2>
-
-      <p>
-        Builders and field crews are encouraged to treat this schematic as a starting point, not a rigid blueprint.
-      </p>
-
-      <ul>
-        <li>Record what works well and what fails under real conditions.</li>
-        <li>Photograph and sketch modifications; share them back to the Commons.</li>
-        <li>Adapt the frame height and stance for local body sizes and terrain.</li>
-        <li>Explore modular mounts: truck bed, trailer, ground frame, barge, etc.</li>
-      </ul>
-
-      <p>
-        A MedicineWheel-style knowledge sharing system may be used to gather versions of the Spoovel
-        from many regions, climates, and communities. The goal is not a single “perfect” design but a
-        network of related, interoperable tools tuned to local realities.
-      </p>
-    </section>
-
-    <hr />
-
-    <section id="downloads">
-      <div class="section-label">Section 7</div>
-      <h2>Downloads</h2>
-      <p>
-        If you later add a printable PDF to this folder, you can link it here, e.g.:
-      </p>
-      <ul>
-        <li><a href="Spoovel_Schematic.pdf" target="_blank" rel="noopener">Spoovel Schematic (PDF)</a> (optional)</li>
-      </ul>
-      <p>
-        To update or remix this design, you are invited to fork, adapt, and re-share under the same commons license.
-      </p>
-    </section>
-
-    <hr />
-
-    <footer>
-      <p class="section-label">Commons</p>
-      <p>
-        Spoovel Mechanism (Spuval/Spoovel/Spooval/Spovel) — Open Hardware Commons Release by
-        Jacobo Hernandez Durbin, 2025. Licensed under CC BY-SA 4.0.
-      </p>
-    </footer>
-  </div>
+    <p>
+      This schematic is intentionally brief. More detailed drawings, measurements,
+      and variations can be added here over time as the design is tested in the field.
+    </p>
+  </main>
 </body>
 </html>
