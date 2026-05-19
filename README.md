@@ -1,4 +1,4 @@
-[README.md](https://github.com/user-attachments/files/28032515/README.md)
+
 # 🛠️ Fox’s Anvil — Open Resilience Tools  
 **Low-tech tools for high-stakes times.  
 Buildable by communities. Repairable by hand. Open to everyone.**
