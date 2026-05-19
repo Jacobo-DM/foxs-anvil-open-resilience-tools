@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Signal Finder + Codetape · Fox’s Anvil</title>
+  <meta
+    name="description"
+    content="Signal Finder + Codetape is a commons seed document for emergency signal mapping, local stewardship, paper layers, and privacy-preserving handoff."
+  />
+  <style>
+    :root {
+      --bg: #121212;
+      --panel: #181818;
+      --line: #333;
+      --text: #e5e5e5;
+      --muted: #b8b8b8;
+      --link: #9cd3ff;
+      --accent: #ffd166;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 20px;
+    }
+
+    header a,
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    header a:hover,
+    a:hover { text-decoration: underline; }
+
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.25;
+      margin-top: 2rem;
+      margin-bottom: 0.75rem;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 8vw, 4rem);
+      margin-top: 1rem;
+      letter-spacing: -0.04em;
+    }
+
+    h1 span {
+      display: block;
+      color: var(--accent);
+    }
+
+    p, li { margin-bottom: 0.8rem; }
+
+    ul, ol { padding-left: 1.35rem; }
+
+    .eyebrow {
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      margin: 0 0 0.75rem;
+    }
+
+    .lede {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 760px;
+    }
+
+    .seed-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 1.5rem 0 2rem;
+      padding: 0;
+      list-style: none;
+    }
+
+    .seed-meta li {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 0.3rem 0.7rem;
+      color: var(--muted);
+      background: var(--panel);
+      font-size: 0.9rem;
+    }
+
+    .panel {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+      padding: 18px;
+      margin: 1.25rem 0;
+    }
+
+    .map {
+      display: grid;
+      gap: 12px;
+      margin: 1.25rem 0;
+    }
+
+    .layer {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      background: #151515;
+    }
+
+    .layer strong {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 0.2rem;
+    }
+
+    .arrow {
+      text-align: center;
+      color: var(--muted);
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      margin: 1.25rem 0;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      background: #151515;
+    }
+
+    .step b {
+      display: inline-block;
+      color: var(--accent);
+      margin-bottom: 0.25rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a href="../index.html">← Back to Fox’s Anvil</a>
+  </header>
+
+  <main>
+    <p class="eyebrow">Emergency Signal Mapping · Commons Seed Document</p>
+    <h1>Signal Finder <span>+ Codetape</span></h1>
+
+    <p class="lede">
+      A community-held emergency signal awareness system designed to help people
+      locate surviving communication, need, and refuge signals after disaster —
+      without turning crisis into surveillance infrastructure.
+    </p>
+
+    <ul class="seed-meta" aria-label="Seed document metadata">
+      <li>Seed document</li>
+      <li>Version 0.1</li>
+      <li>Three layers</li>
+      <li>Local steward required</li>
+      <li>CC BY-SA 4.0</li>
+    </ul>
+
+    <section class="panel" aria-labelledby="purpose">
+      <h2 id="purpose">Purpose</h2>
+      <p>
+        Find the signal. Protect the people. Signal Finder is meant for crisis
+        conditions where communication has fractured and local responders need to
+        understand what signals remain: wireless traces, visible tags, handwritten
+        messages, safe-house markers, dead-zone corridors, and resource points.
+      </p>
+      <p>
+        The system is not a cloud platform. It is a handoff discipline: detection
+        becomes stewardship, and the map belongs first to the affected community.
+      </p>
+    </section>
+
+    <section aria-labelledby="architecture">
+      <h2 id="architecture">System Architecture</h2>
+      <div class="map" role="list">
+        <div class="layer" role="listitem">
+          <strong>Layer 0 · Search</strong>
+          Drone · rover · kite · balloon · hand-carried node · bicycle mount
+        </div>
+        <div class="arrow">↓</div>
+        <div class="layer" role="listitem">
+          <strong>Layer 1 · Wireless</strong>
+          Wi-Fi · cell · mesh · LoRa · Bluetooth · emergency SSIDs
+        </div>
+        <div class="arrow">↓</div>
+        <div class="layer" role="listitem">
+          <strong>Layer 2 · Beacon</strong>
+          HELP_WATER · MEDICAL_NEED · SAFE_HOUSE · FOOD_HERE · CHARGING_STATION
+        </div>
+        <div class="arrow">↓</div>
+        <div class="layer" role="listitem">
+          <strong>Layer 3 · Paper</strong>
+          Tags · symbols · handwritten signs · local meanings · carried messages
+        </div>
+        <div class="arrow">↓</div>
+        <div class="layer" role="listitem">
+          <strong>The handoff</strong>
+          Detection becomes stewardship.
+        </div>
+        <div class="arrow">↓</div>
+        <div class="layer" role="listitem">
+          <strong>Layer 4 · Steward</strong>
+          Clinic · library · school · fire station · mutual-aid hub · neighborhood council
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="rhythm">
+      <h2 id="rhythm">Process Rhythm</h2>
+      <div class="steps">
+        <div class="step">
+          <b>01 · Find</b>
+          <p>Sense wireless and visible signals across the affected area.</p>
+        </div>
+        <div class="step">
+          <b>02 · Read</b>
+          <p>Distinguish infrastructure, beacon, tag, and need. Not content. Not identity.</p>
+        </div>
+        <div class="step">
+          <b>03 · Hand Off</b>
+          <p>Return the map to the local steward. Not the cloud. Not a remote platform.</p>
+        </div>
+        <div class="step">
+          <b>04 · Repair</b>
+          <p>Use the map to reconnect people, resources, and care.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" aria-labelledby="steward-map">
+      <h2 id="steward-map">Local Steward Map</h2>
+      <p>
+        Data belongs first to the affected community. Data flows to a trusted
+        local steward — a clinic, library, school, fire station, mutual-aid hub,
+        or neighborhood council chosen by the people affected. Not assigned by
+        outside responders or platforms.
+      </p>
+      <ul>
+        <li>Signal strength logs</li>
+        <li>Paper tag sightings</li>
+        <li>Emergency beacon locations</li>
+        <li>Dead-zone corridors</li>
+        <li>Resource points</li>
+        <li>Summary maps when appropriate</li>
+        <li>Deletion after emergency window</li>
+        <li>No raw export without steward consent</li>
+      </ul>
+      <p><strong>The map belongs to the people in the map.</strong></p>
+    </section>
+
+    <section aria-labelledby="codetape">
+      <h2 id="codetape">Codetape</h2>
+      <p>
+        Codetape is the trust layer. Signal data stays close to the people
+        affected. The system may find signals, but authority over the map is
+        handed to a trusted local steward — not to a cloud platform, vendor, or
+        outside agency by default.
+      </p>
+      <p>
+        Codetape can include offline storage, printed handoff logs, local
+        encryption keys, deletion protocols, paper records, and community-held
+        access rules.
+      </p>
+      <p><strong>The signal can travel. The authority to hold the map does not.</strong></p>
+    </section>
+
+    <section class="panel" aria-labelledby="paper-layer">
+      <h2 id="paper-layer">Paper Layer</h2>
+      <p>
+        Some signs everyone knows. Some signs only this place knows. The paper
+        tag system carries two registers: universal signs any person can read on
+        arrival, and local signs created by the community before disaster season.
+      </p>
+      <p>
+        The paper layer is not a fallback for when wireless fails. It is a
+        first-class protocol. It predates the internet, survives all power
+        outages, and requires no infrastructure to receive.
+      </p>
+      <p>Water · medical · food · safe place · danger · local symbols</p>
+    </section>
+
+    <section aria-labelledby="covenant">
+      <h2 id="covenant">Responsible Use Covenant</h2>
+      <p>This system does not:</p>
+      <ul>
+        <li>Conduct surveillance</li>
+        <li>Upload to cloud by default</li>
+        <li>Identify individuals unless rescue requires it</li>
+        <li>Retain data post-crisis without consent</li>
+        <li>Require an account, app, login, or platform to receive help</li>
+        <li>Operate without a named local steward</li>
+        <li>Export raw data without steward consent</li>
+        <li>Operate outside emergency context without steward approval</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="pilots">
+      <h2 id="pilots">Pilot Zones</h2>
+      <ul>
+        <li>Earthquake neighborhood grid</li>
+        <li>Wildfire evacuation edge</li>
+        <li>Flooded street / rural road</li>
+        <li>Blackout corridor</li>
+        <li>Mutual-aid shelter network</li>
+        <li>Island / ferry-dependent community</li>
+      </ul>
+    </section>
+
+    <section class="panel" aria-labelledby="relatives">
+      <h2 id="relatives">Prior Relatives</h2>
+      <p>
+        This seed has relatives in commercial search-and-rescue signal drones,
+        disaster mesh networking, open-source UAV ecosystems, and Wi-Fi/Bluetooth
+        emergency-response research.
+      </p>
+      <p>
+        Its commons contribution is the ethical frame: local stewardship,
+        paper-layer dignity, privacy by design, and community-held maps.
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        Signal Finder + Codetape · CC BY-SA 4.0 · Jacobo Hernandez Durbin + The Braid
+      </p>
+      <p>
+        Software, firmware, and hardware files may carry separate open-source or
+        open-hardware licenses when released. CC BY-SA applies to this seed document.
+      </p>
+      <p>COMMONS SEED · v0.1 · Fork · Adapt · Build</p>
+    </footer>
+  </main>
+</body>
+</html>
