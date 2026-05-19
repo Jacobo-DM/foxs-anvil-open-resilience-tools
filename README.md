@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/28032515/README.md)
 # 🛠️ Fox’s Anvil — Open Resilience Tools  
 **Low-tech tools for high-stakes times.  
 Buildable by communities. Repairable by hand. Open to everyone.**
@@ -7,7 +8,8 @@ Fox’s Anvil gathers simple, durable designs meant to strengthen local resilien
 ---
 
 ## 🔥 What Lives Here
-- **Spuvel / Spuval** — sack-filling and binding mechanism  
+- **Spoovel / Spuval** — sack-filling and binding mechanism  
+- **Signal Finder + Codetape** — emergency signal mapping with local stewardship and paper + wireless layers  
 - **Commons Conveyer** — low-tech, hand-driven conveyor for soil, compost, grain  
 - **Jute-based field kits**  
 - **Village-scale repairs & fixtures**  
@@ -22,6 +24,8 @@ Everything here is:
 ---
 
 ## 🧩 Structure
+- `/signal-finder` — Signal Finder + Codetape seed document  
+- `/spoovel` — Spoovel overview and schematic  
 - `/schematics` — PDFs, SVGs, and illustrations  
 - `/prototypes` — photos, measurements, stresses, field notes  
 - `/materials` — what to source, alternatives, trade-offs  
