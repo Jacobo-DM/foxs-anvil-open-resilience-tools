@@ -15,7 +15,7 @@
       --line: #383838;
       --link: #9cd3ff;
       --accent: #f0d48a;
-      --max: 820px;
+      --max: 900px;
     }
 
     * {
@@ -89,16 +89,16 @@
     }
 
     ul {
-      padding-left: 20px;
+      padding-left: 22px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.95em;
     }
 
     .lede {
       font-size: 1.08rem;
-      color: var(--text);
-    }
-
-    .note {
-      color: var(--muted);
     }
 
     .tool-list {
@@ -108,7 +108,7 @@
 
     .tool-list li {
       padding: 1rem;
-      margin-bottom: 0.85rem;
+      margin-bottom: 0.9rem;
       border: 1px solid var(--line);
       border-radius: 14px;
       background: var(--panel);
@@ -117,6 +117,7 @@
     .tool-list strong {
       display: block;
       margin-bottom: 0.25rem;
+      font-size: 1.04rem;
     }
 
     .card {
@@ -127,7 +128,14 @@
       margin: 1rem 0;
     }
 
-    .schematic-grid {
+    .path {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
+      background: var(--panel);
+    }
+
+    .field-grid {
       display: grid;
       grid-template-columns: 1fr;
       gap: 1.25rem;
@@ -157,19 +165,15 @@
       color: var(--muted);
     }
 
-    .path {
-      margin: 1.5rem 0;
-      padding: 1rem;
-      border-left: 4px solid var(--accent);
-      background: var(--panel);
-      color: var(--text);
-    }
-
     .license-box {
       padding: 1rem;
       border: 1px dashed var(--accent);
       border-radius: 14px;
       background: #171510;
+    }
+
+    .note {
+      color: var(--muted);
     }
 
     footer {
@@ -180,13 +184,8 @@
       padding-top: 14px;
     }
 
-    code {
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
-      font-size: 0.95em;
-    }
-
     @media (min-width: 760px) {
-      .schematic-grid {
+      .field-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
@@ -199,7 +198,8 @@
     <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="#tools">Tools</a>
-      <a href="#schematics">Field Schematics</a>
+      <a href="#signal-finder">Signal Finder</a>
+      <a href="#spoovel">Spoovel</a>
       <a href="#license">License & Attribution</a>
       <a href="https://jacobo-dm.github.io/mythwear-commons/" target="_blank" rel="noopener noreferrer">MythWear Commons</a>
     </nav>
@@ -211,20 +211,25 @@
 
       <p class="lede">
         The Fox’s Anvil is a commons-based workshop for tools that meet the world
-        at the scale of land, water, emergency response, and community repair.
+        at the scale of land, water, emergency response, restoration, and community repair.
       </p>
 
       <p>
-        These are not products, wearables, or toys. They are open designs for real
-        work: restoration, flood and fire response, agroecology, local memory,
-        mutual aid, and community resilience.
+        These are not products, wearables, or toys. They are open designs and
+        field paths for real work: flood and fire response, agroecology, local memory,
+        mutual aid, infrastructure care, and community resilience.
       </p>
 
       <p>
-        All designs shared here are meant to be built, repaired, adapted, and
-        improved by farmers, welders, mechanics, librarians, students, neighbors,
+        All designs shared here are meant to be built, repaired, adapted, tested,
+        and improved by farmers, welders, mechanics, librarians, students, neighbors,
         volunteers, and communities willing to take responsibility for their use.
       </p>
+
+      <div class="path">
+        <strong>Working principle:</strong>
+        build small, test honestly, repair locally, share what fails as well as what works.
+      </div>
     </section>
 
     <section id="tools" aria-labelledby="tools-title">
@@ -232,15 +237,16 @@
 
       <ul class="tool-list">
         <li>
-          <strong><a href="spoovel/index.html">The Spoovel · V1</a></strong>
-          A low-tech, field-repairable tool for moving, filling, shaping, or placing
-          material in restoration and resilience work.
+          <strong><a href="spoovel/index.html">The Spoovel · v0</a></strong>
+          A low-tech, field-repairable sack-filling and material-handling tool path.
+          The current v0 begins with a bag-holder, chute, and wheel-frame, then expands
+          only after testing against a hand-filled baseline.
         </li>
 
         <li>
           <strong><a href="signal-finder/index.html">Signal Finder + CodeTape · v0.1</a></strong>
           A commons seed for emergency signal-finding, paper-first communication,
-          local stewardship, and offline community memory.
+          local stewardship, offline community memory, and disaster response coordination.
         </li>
 
         <li>
@@ -251,36 +257,58 @@
       </ul>
     </section>
 
-    <section aria-labelledby="spoovel-docs-title">
-      <h2 id="spoovel-docs-title">Spoovel Schematic & Documentation</h2>
+    <section id="spoovel" aria-labelledby="spoovel-title">
+      <h2 id="spoovel-title">The Spoovel</h2>
 
       <p>
-        The Spoovel is a low-tech, field-repairable resilience tool. Its schematic
-        is kept intentionally simple so that communities can recreate, adapt, and
-        improve the design.
+        The Spoovel is a different kind of commons tool: not a signal flare, but an
+        engineering path. It must earn each layer through measurement, field testing,
+        repair, and repeatable use.
       </p>
 
       <p>
-        <a href="Spoovel_Schematic.html" target="_blank" rel="noopener noreferrer">
-          View the Spoovel Schematic
-        </a>
+        Its current path is:
+      </p>
+
+      <div class="path">
+        Measure → Build v0 → Test → Repair → Retest → Expand
+      </div>
+
+      <p>
+        Start with the v0 physical schematic and field test sheet before adding winches,
+        conveyors, tie-off stations, CodeTape integration, Signal Finder coordination,
+        or AI-assisted planning.
       </p>
 
       <p>
-        If you build or modify the Spoovel, please share what you learn so others
-        can improve the design in the field.
+        <a href="spoovel/index.html">Open the Spoovel page</a>
       </p>
     </section>
 
-    <section id="schematics" aria-labelledby="schematics-title">
-      <h2 id="schematics-title">Field Schematics</h2>
+    <section id="signal-finder" aria-labelledby="signal-finder-title">
+      <h2 id="signal-finder-title">Signal Finder + CodeTape</h2>
 
       <p>
-        These diagrams are commons field sheets: practical, printable, and meant
-        to be critiqued, adapted, and tested by real communities before emergencies.
+        Signal Finder + CodeTape is a commons seed for emergency communication and
+        local memory. It begins not with a drone or dashboard, but with a simple
+        question:
       </p>
 
-      <div class="schematic-grid">
+      <div class="path">
+        What would make this useful, safe, and locally trustworthy before the next
+        outage, fire, flood, or earthquake?
+      </div>
+
+      <p>
+        The first usable footpath is the paper tag system: eye-readable first,
+        machine-readable second, human dignity always.
+      </p>
+
+      <p>
+        <a href="signal-finder/index.html">Open the Signal Finder + CodeTape page</a>
+      </p>
+
+      <div class="field-grid">
         <figure>
           <img
             src="assets/signal_finder_codetape_accessible_schematic.svg"
@@ -302,11 +330,6 @@
             Human dignity always.
           </figcaption>
         </figure>
-      </div>
-
-      <div class="path">
-        <strong>Current path:</strong>
-        Read → critique → adapt → test one tiny piece.
       </div>
     </section>
 
@@ -334,13 +357,13 @@
 
         <p>
           Until a formal license is chosen, these materials are shared as commons
-          seeds: copy, adapt, test, and improve them with attribution.
+          seeds: copy, adapt, test, repair, and improve them with attribution.
         </p>
 
         <p>
           No patents. No enclosure. No surveillance use. No extractive data capture.
-          Keep local control, consent, repairability, and community stewardship at
-          the center.
+          No proprietary dependency where avoidable. Keep local control, consent,
+          repairability, and community stewardship at the center.
         </p>
       </div>
 
@@ -361,16 +384,16 @@
         Suggested attribution line:
         <br />
         <code>
-          Signal Finder + CodeTape, from The Fox’s Anvil by Jacobo Hernández Durbin.
-          Shared as a commons seed; adapt with care and attribution.
+          The Fox’s Anvil: Open Resilience Tools, by Jacobo Hernández Durbin.
+          Shared as commons seeds; adapt with care and attribution.
         </code>
       </p>
     </section>
 
     <footer>
       <p>
-        Shared in the spirit of the Commons. Build with care. Use with
-        responsibility. Share improvements.
+        Shared in the spirit of the Commons. Build with care. Test honestly.
+        Use with responsibility. Share improvements.
       </p>
     </footer>
   </main>
