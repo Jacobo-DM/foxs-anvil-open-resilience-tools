@@ -6,63 +6,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <style>
+    :root {
+      --bg: #121212;
+      --panel: #181818;
+      --panel-soft: #1f1f1f;
+      --text: #e8e5dd;
+      --muted: #b8b2a7;
+      --line: #383838;
+      --link: #9cd3ff;
+      --accent: #f0d48a;
+      --max: 820px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       line-height: 1.6;
-      color: #e5e5e5;
-      background-color: #121212;
+      color: var(--text);
+      background-color: var(--bg);
       margin: 0;
       padding: 0;
     }
+
     header {
-      border-bottom: 1px solid #333;
-      padding: 12px 20px;
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px;
+      background: #0f0f0f;
     }
+
     header h1 {
       margin: 0;
-      font-size: 1.4rem;
+      font-size: 1.45rem;
+      letter-spacing: 0.01em;
     }
+
     header nav {
-      margin-top: 4px;
-      font-size: 0.9rem;
+      margin-top: 6px;
+      font-size: 0.92rem;
     }
-    header a {
-      color: #9cd3ff;
-      text-decoration: none;
-      margin-right: 12px;
-    }
-    header a:hover {
-      text-decoration: underline;
-    }
-    main {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 32px 20px 40px;
-    }
-    h2, h3 {
-      line-height: 1.3;
-      margin-top: 2rem;
-      margin-bottom: 1rem;
-    }
-    p, li {
-      margin-bottom: 1rem;
-    }
+
+    header a,
     a {
-      color: #9cd3ff;
+      color: var(--link);
       text-decoration: none;
     }
+
+    header a {
+      margin-right: 14px;
+    }
+
     a:hover {
       text-decoration: underline;
     }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 36px 20px 48px;
+    }
+
+    h2,
+    h3 {
+      line-height: 1.3;
+      margin-top: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.65rem;
+    }
+
+    h3 {
+      font-size: 1.18rem;
+    }
+
+    p,
+    li {
+      margin-bottom: 1rem;
+    }
+
     ul {
       padding-left: 20px;
     }
+
+    .lede {
+      font-size: 1.08rem;
+      color: var(--text);
+    }
+
+    .note {
+      color: var(--muted);
+    }
+
+    .tool-list {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .tool-list li {
+      padding: 1rem;
+      margin-bottom: 0.85rem;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--panel);
+    }
+
+    .tool-list strong {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .card {
+      padding: 1.1rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+      margin: 1rem 0;
+    }
+
+    .schematic-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    figure {
+      margin: 0;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel-soft);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #050505;
+      border-radius: 12px;
+      border: 1px solid #2a2a2a;
+    }
+
+    figcaption {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .path {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      border-left: 4px solid var(--accent);
+      background: var(--panel);
+      color: var(--text);
+    }
+
+    .license-box {
+      padding: 1rem;
+      border: 1px dashed var(--accent);
+      border-radius: 14px;
+      background: #171510;
+    }
+
     footer {
       margin-top: 3rem;
       font-size: 0.9rem;
-      opacity: 0.8;
-      border-top: 1px solid #333;
-      padding-top: 12px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.95em;
+    }
+
+    @media (min-width: 760px) {
+      .schematic-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
   </style>
 </head>
@@ -70,67 +196,183 @@
 <body>
   <header>
     <h1>The Fox’s Anvil</h1>
-    <nav>
+    <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="#tools">Tools</a>
-      <a href="https://jacobo-dm.github.io/mythwear-commons/" target="_blank">MythWear Commons</a>
+      <a href="#schematics">Field Schematics</a>
+      <a href="#license">License & Attribution</a>
+      <a href="https://jacobo-dm.github.io/mythwear-commons/" target="_blank" rel="noopener noreferrer">MythWear Commons</a>
     </nav>
   </header>
 
   <main>
-    <h2>Open Resilience Tools</h2>
+    <section aria-labelledby="open-resilience-tools">
+      <h2 id="open-resilience-tools">Open Resilience Tools</h2>
 
-    <p>
-      The Fox’s Anvil is a commons-based workshop for tools that meet the world
-      at the scale of land, water, and community. These are not wearables or toys.
-      They are open designs for real work: restoration, flood and fire response,
-      agroecology, and community resilience.
-    </p>
+      <p class="lede">
+        The Fox’s Anvil is a commons-based workshop for tools that meet the world
+        at the scale of land, water, emergency response, and community repair.
+      </p>
 
-    <p>
-      All designs shared here remain part of the Commons. They are meant to be
-      built, repaired, adapted, and improved by farmers, welders, mechanics,
-      neighbors, students, and volunteers—anyone willing to take responsibility
-      for their use.
-    </p>
+      <p>
+        These are not products, wearables, or toys. They are open designs for real
+        work: restoration, flood and fire response, agroecology, local memory,
+        mutual aid, and community resilience.
+      </p>
 
-    <h2 id="tools">Tools in this Forge</h2>
-    <ul>
-      <li><a href="spoovel/index.html">The Spoovel · V1</a></li>
-      <li><a href="signal-finder/index.html">Signal Finder + Codetape · v0.1</a></li>
-      <li><em>Additional tools will be added as they are ready.</em></li>
-    </ul>
+      <p>
+        All designs shared here are meant to be built, repaired, adapted, and
+        improved by farmers, welders, mechanics, librarians, students, neighbors,
+        volunteers, and communities willing to take responsibility for their use.
+      </p>
+    </section>
 
-    <h3>Relation to MythWear</h3>
-    <p>
-      MythWear Commons focuses on body-scale tools, garments, and movement
-      companions. The Fox’s Anvil focuses on land-scale and infrastructure-scale
-      tools. They are siblings: one close to the skin, one close to the ground.
-    </p>
+    <section id="tools" aria-labelledby="tools-title">
+      <h2 id="tools-title">Tools in this Forge</h2>
+
+      <ul class="tool-list">
+        <li>
+          <strong><a href="spoovel/index.html">The Spoovel · V1</a></strong>
+          A low-tech, field-repairable tool for moving, filling, shaping, or placing
+          material in restoration and resilience work.
+        </li>
+
+        <li>
+          <strong><a href="signal-finder/index.html">Signal Finder + CodeTape · v0.1</a></strong>
+          A commons seed for emergency signal-finding, paper-first communication,
+          local stewardship, and offline community memory.
+        </li>
+
+        <li>
+          <strong>Additional tools</strong>
+          More tools will be added as they become clear enough to share, test, and
+          repair in public.
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="spoovel-docs-title">
+      <h2 id="spoovel-docs-title">Spoovel Schematic & Documentation</h2>
+
+      <p>
+        The Spoovel is a low-tech, field-repairable resilience tool. Its schematic
+        is kept intentionally simple so that communities can recreate, adapt, and
+        improve the design.
+      </p>
+
+      <p>
+        <a href="Spoovel_Schematic.html" target="_blank" rel="noopener noreferrer">
+          View the Spoovel Schematic
+        </a>
+      </p>
+
+      <p>
+        If you build or modify the Spoovel, please share what you learn so others
+        can improve the design in the field.
+      </p>
+    </section>
+
+    <section id="schematics" aria-labelledby="schematics-title">
+      <h2 id="schematics-title">Field Schematics</h2>
+
+      <p>
+        These diagrams are commons field sheets: practical, printable, and meant
+        to be critiqued, adapted, and tested by real communities before emergencies.
+      </p>
+
+      <div class="schematic-grid">
+        <figure>
+          <img
+            src="assets/signal_finder_codetape_accessible_schematic.svg"
+            alt="Accessible schematic showing Signal Finder, CodeTape, paper tags, local stewards, responders, and the simple v0 prototype loop."
+          />
+          <figcaption>
+            Signal Finder + CodeTape field schematic. The first prototype loop is
+            simple: handheld scanner, paper tag, local steward.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/paper_tag_taxonomy_v01_card10_corrected.svg"
+            alt="Paper Tag Taxonomy field sheet with twelve emergency tags including water needed, medical need, checked OK, do not enter, safe route, shelter, food, power needed, animal present, elder or disabled person present, children present, and message left here."
+          />
+          <figcaption>
+            Paper Tag Taxonomy v0.1. Eye-readable first. Machine-readable second.
+            Human dignity always.
+          </figcaption>
+        </figure>
+      </div>
+
+      <div class="path">
+        <strong>Current path:</strong>
+        Read → critique → adapt → test one tiny piece.
+      </div>
+    </section>
+
+    <section aria-labelledby="relation-title">
+      <h2 id="relation-title">Relation to MythWear</h2>
+
+      <p>
+        MythWear Commons focuses on body-scale tools, garments, and movement
+        companions. The Fox’s Anvil focuses on land-scale, field-scale, and
+        infrastructure-scale tools.
+      </p>
+
+      <p>
+        They are siblings: one close to the skin, one close to the ground.
+      </p>
+    </section>
+
+    <section id="license" aria-labelledby="license-title">
+      <h2 id="license-title">License & Attribution</h2>
+
+      <div class="license-box">
+        <p>
+          <strong>License status:</strong> under review.
+        </p>
+
+        <p>
+          Until a formal license is chosen, these materials are shared as commons
+          seeds: copy, adapt, test, and improve them with attribution.
+        </p>
+
+        <p>
+          No patents. No enclosure. No surveillance use. No extractive data capture.
+          Keep local control, consent, repairability, and community stewardship at
+          the center.
+        </p>
+      </div>
+
+      <h3>Attribution</h3>
+
+      <p>
+        Concept, stewardship, and originating frame:
+        <strong>Jacobo Hernández Durbin / The Fox’s Anvil</strong>.
+      </p>
+
+      <p>
+        Developed with AI-assisted drafting and schematic support from Claude and
+        ChatGPT / Elumannín, with human review, correction, and stewardship by
+        Jacobo Hernández Durbin.
+      </p>
+
+      <p class="note">
+        Suggested attribution line:
+        <br />
+        <code>
+          Signal Finder + CodeTape, from The Fox’s Anvil by Jacobo Hernández Durbin.
+          Shared as a commons seed; adapt with care and attribution.
+        </code>
+      </p>
+    </section>
 
     <footer>
       <p>
-        Shared in the spirit of the Commons. No patents, no enclosure.
-        Build with care. Use with responsibility. Share improvements.
+        Shared in the spirit of the Commons. Build with care. Use with
+        responsibility. Share improvements.
       </p>
     </footer>
-    <h2>Schematic & Documentation</h2>
-
-<p>
-  The Spoovel is a low-tech, field-repairable resilience tool. Its schematic is kept
-  intentionally simple so that communities can recreate, adapt, and improve the design.
-</p>
-
-<p>
-  👉 <a href="Spoovel_Schematic.html" target="_blank">
-    View the Spoovel Schematic (HTML)
-  </a>
-</p>
-
-<p>
-  If you build or modify the Spoovel, feel free to fork the repository and add your
-  improvements to help others in the field.
-</p>
   </main>
 </body>
 </html>
