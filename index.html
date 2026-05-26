@@ -15,18 +15,27 @@
       --line: #383838;
       --link: #9cd3ff;
       --accent: #f0d48a;
-      --max: 900px;
+      --earth: #c59b6d;
+      --water: #8fc7d8;
+      --max: 920px;
     }
 
     * {
       box-sizing: border-box;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       line-height: 1.6;
       color: var(--text);
-      background-color: var(--bg);
+      background:
+        radial-gradient(circle at top left, rgba(240, 212, 138, 0.08), transparent 32rem),
+        radial-gradient(circle at bottom right, rgba(143, 199, 216, 0.07), transparent 28rem),
+        var(--bg);
       margin: 0;
       padding: 0;
     }
@@ -34,7 +43,11 @@
     header {
       border-bottom: 1px solid var(--line);
       padding: 14px 20px;
-      background: #0f0f0f;
+      background: rgba(15, 15, 15, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
     }
 
     header h1 {
@@ -46,26 +59,25 @@
     header nav {
       margin-top: 6px;
       font-size: 0.92rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.9rem;
     }
 
-    header a,
     a {
       color: var(--link);
       text-decoration: none;
     }
 
-    header a {
-      margin-right: 14px;
-    }
-
-    a:hover {
+    a:hover,
+    a:focus {
       text-decoration: underline;
     }
 
     main {
       max-width: var(--max);
       margin: 0 auto;
-      padding: 36px 20px 48px;
+      padding: 38px 20px 52px;
     }
 
     h2,
@@ -76,7 +88,7 @@
     }
 
     h2 {
-      font-size: 1.65rem;
+      font-size: 1.68rem;
     }
 
     h3 {
@@ -98,19 +110,50 @@
     }
 
     .lede {
-      font-size: 1.08rem;
+      font-size: 1.1rem;
+      color: #f1eee6;
+    }
+
+    .small {
+      font-size: 0.92rem;
+    }
+
+    .muted,
+    .note {
+      color: var(--muted);
+    }
+
+    .path,
+    .principle,
+    .license-box {
+      padding: 1rem;
+      border-radius: 14px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .path {
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--accent);
+    }
+
+    .principle {
+      margin: 1.25rem 0;
+      border-left: 4px solid var(--water);
     }
 
     .tool-list {
       list-style: none;
       padding-left: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
     }
 
     .tool-list li {
       padding: 1rem;
-      margin-bottom: 0.9rem;
       border: 1px solid var(--line);
-      border-radius: 14px;
+      border-radius: 16px;
       background: var(--panel);
     }
 
@@ -120,19 +163,14 @@
       font-size: 1.04rem;
     }
 
-    .card {
-      padding: 1.1rem;
+    .tool-tag {
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.18rem 0.5rem;
       border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--panel);
-      margin: 1rem 0;
-    }
-
-    .path {
-      margin: 1.5rem 0;
-      padding: 1rem;
-      border-left: 4px solid var(--accent);
-      background: var(--panel);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     .field-grid {
@@ -166,14 +204,8 @@
     }
 
     .license-box {
-      padding: 1rem;
       border: 1px dashed var(--accent);
-      border-radius: 14px;
       background: #171510;
-    }
-
-    .note {
-      color: var(--muted);
     }
 
     footer {
@@ -188,6 +220,14 @@
       .field-grid {
         grid-template-columns: 1fr 1fr;
       }
+
+      .tool-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tool-list li.full {
+        grid-column: 1 / -1;
+      }
     }
   </style>
 </head>
@@ -198,8 +238,9 @@
     <nav aria-label="Main navigation">
       <a href="index.html">Home</a>
       <a href="#tools">Tools</a>
-      <a href="#signal-finder">Signal Finder</a>
+      <a href="#garden-raft">Garden Raft</a>
       <a href="#spoovel">Spoovel</a>
+      <a href="#signal-finder">Signal Finder</a>
       <a href="#license">License & Attribution</a>
       <a href="https://jacobo-dm.github.io/mythwear-commons/" target="_blank" rel="noopener noreferrer">MythWear Commons</a>
     </nav>
@@ -215,9 +256,9 @@
       </p>
 
       <p>
-        These are not products, wearables, or toys. They are open designs and
-        field paths for real work: flood and fire response, agroecology, local memory,
-        mutual aid, infrastructure care, and community resilience.
+        These are not products, wearables, dashboards, or toys. They are open designs
+        and field paths for real work: flood and fire response, agroecology, local memory,
+        mutual aid, infrastructure care, water-edge repair, and community resilience.
       </p>
 
       <p>
@@ -237,24 +278,71 @@
 
       <ul class="tool-list">
         <li>
+          <strong><a href="garden-raft/index.html">Garden Raft · v0.1</a></strong>
+          A low-tech platform for working where land and water meet. Not primarily
+          a boat, but a mediating surface for garden tending, water-edge repair,
+          wetland observation, field learning, and community resilience.
+          <br />
+          <span class="tool-tag">water-edge repair</span>
+        </li>
+
+        <li>
           <strong><a href="spoovel/index.html">The Spoovel · v0</a></strong>
           A low-tech, field-repairable sack-filling and material-handling tool path.
           The current v0 begins with a bag-holder, chute, and wheel-frame, then expands
           only after testing against a hand-filled baseline.
+          <br />
+          <span class="tool-tag">material handling</span>
         </li>
 
         <li>
           <strong><a href="signal-finder/index.html">Signal Finder + CodeTape · v0.1</a></strong>
           A commons seed for emergency signal-finding, paper-first communication,
           local stewardship, offline community memory, and disaster response coordination.
+          <br />
+          <span class="tool-tag">local memory</span>
         </li>
 
         <li>
           <strong>Additional tools</strong>
-          More tools will be added as they become clear enough to share, test, and
-          repair in public.
+          More tools will be added as they become clear enough to share, test, repair,
+          and responsibly steward in public.
+          <br />
+          <span class="tool-tag">emerging seeds</span>
         </li>
       </ul>
+    </section>
+
+    <section id="garden-raft" aria-labelledby="garden-raft-title">
+      <h2 id="garden-raft-title">Garden Raft</h2>
+
+      <p>
+        Garden Raft is a low-tech commons module for water-edge work. It belongs
+        here because it is not only a raft design. It is a way to give a person,
+        a tool, and a living edge a stable place to meet.
+      </p>
+
+      <div class="principle">
+        <strong>Root note:</strong>
+        Garden Raft is not primarily a boat. It is a mediating platform.
+      </div>
+
+      <p>
+        The raft may support pond work, flooded gardens, wetland observation,
+        floating nursery experiments, school field studies, irrigation-edge access,
+        or habitat repair. Its first responsibility is not speed. Its first
+        responsibility is stability, repairability, and care.
+      </p>
+
+      <div class="path">
+        Stability before mobility.<br />
+        Repair before elegance.<br />
+        A raft is a place to stand when the edge is changing.
+      </div>
+
+      <p>
+        <a href="garden-raft/index.html">Open the Garden Raft page</a>
+      </p>
     </section>
 
     <section id="spoovel" aria-labelledby="spoovel-title">
@@ -338,8 +426,8 @@
 
       <p>
         MythWear Commons focuses on body-scale tools, garments, and movement
-        companions. The Fox’s Anvil focuses on land-scale, field-scale, and
-        infrastructure-scale tools.
+        companions. The Fox’s Anvil focuses on land-scale, water-edge, field-scale,
+        and infrastructure-scale tools.
       </p>
 
       <p>
@@ -352,12 +440,16 @@
 
       <div class="license-box">
         <p>
-          <strong>License status:</strong> under review.
+          <strong>Commons materials:</strong>
+          text, documentation, field notes, diagrams, and educational materials are
+          shared under <strong>Creative Commons Attribution 4.0 International</strong>
+          unless otherwise noted.
         </p>
 
         <p>
-          Until a formal license is chosen, these materials are shared as commons
-          seeds: copy, adapt, test, repair, and improve them with attribution.
+          <strong>Code:</strong>
+          site code, scripts, and software-like materials are shared under the
+          <strong>MIT License</strong> unless otherwise noted.
         </p>
 
         <p>
@@ -385,7 +477,7 @@
         <br />
         <code>
           The Fox’s Anvil: Open Resilience Tools, by Jacobo Hernández Durbin.
-          Shared as commons seeds; adapt with care and attribution.
+          Shared under CC BY 4.0 for documentation and MIT for code, unless otherwise noted.
         </code>
       </p>
     </section>
