@@ -37,3 +37,549 @@
         radial-gradient(circle at bottom right, rgba(143, 199, 216, 0.07), transparent 28rem),
         var(--bg);
       margin: 0;
+      padding: 0;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      padding: 14px 20px;
+      background: rgba(15, 15, 15, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.45rem;
+      letter-spacing: 0.01em;
+    }
+
+    header nav {
+      margin-top: 6px;
+      font-size: 0.92rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.9rem;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 38px 20px 52px;
+    }
+
+    h2,
+    h3 {
+      line-height: 1.3;
+      margin-top: 2.4rem;
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.68rem;
+    }
+
+    h3 {
+      font-size: 1.18rem;
+    }
+
+    p,
+    li {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 22px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      font-size: 0.95em;
+    }
+
+    .lede {
+      font-size: 1.1rem;
+      color: #f1eee6;
+    }
+
+    .small {
+      font-size: 0.92rem;
+    }
+
+    .muted,
+    .note {
+      color: var(--muted);
+    }
+
+    .path,
+    .principle,
+    .license-box {
+      padding: 1rem;
+      border-radius: 14px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+    }
+
+    .path {
+      margin: 1.5rem 0;
+      border-left: 4px solid var(--accent);
+    }
+
+    .principle {
+      margin: 1.25rem 0;
+      border-left: 4px solid var(--water);
+    }
+
+    .tool-list {
+      list-style: none;
+      padding-left: 0;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+
+    .tool-list li {
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel);
+    }
+
+    .tool-list strong {
+      display: block;
+      margin-bottom: 0.25rem;
+      font-size: 1.04rem;
+    }
+
+    .tool-tag {
+      display: inline-block;
+      margin-top: 0.4rem;
+      padding: 0.18rem 0.5rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .field-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.25rem;
+    }
+
+    figure {
+      margin: 0;
+      padding: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--panel-soft);
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #050505;
+      border-radius: 12px;
+      border: 1px solid #2a2a2a;
+    }
+
+    figcaption {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .license-box {
+      border: 1px dashed var(--accent);
+      background: #171510;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+    }
+
+    @media (min-width: 760px) {
+      .field-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tool-list {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .tool-list li.full {
+        grid-column: 1 / -1;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>The Fox’s Anvil</h1>
+    <nav aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="#tools">Tools</a>
+      <a href="#garden-raft">Garden Raft</a>
+      <a href="#spoovel">Spoovel</a>
+      <a href="#signal-finder">Signal Finder</a>
+      <a href="#rescue-thread">Rescue Thread</a>
+      <a href="#ocean-listening-network">Ocean Listening</a>
+      <a href="#license">License & Attribution</a>
+      <a href="https://jacobo-dm.github.io/mythwear-commons/" target="_blank" rel="noopener noreferrer">MythWear Commons</a>
+    </nav>
+  </header>
+
+  <main>
+    <section aria-labelledby="open-resilience-tools">
+      <h2 id="open-resilience-tools">Open Resilience Tools</h2>
+
+      <p class="lede">
+        The Fox’s Anvil is a commons-based workshop for tools that meet the world
+        at the scale of land, water, emergency response, restoration, and community repair.
+      </p>
+
+      <p>
+        These are not products, wearables, dashboards, or toys. They are open designs
+        and field paths for real work: flood and fire response, agroecology, local memory,
+        mutual aid, infrastructure care, water-edge repair, and community resilience.
+      </p>
+
+      <p>
+        All designs shared here are meant to be built, repaired, adapted, tested,
+        and improved by farmers, welders, mechanics, librarians, students, neighbors,
+        volunteers, and communities willing to take responsibility for their use.
+      </p>
+
+      <div class="path">
+        <strong>Working principle:</strong>
+        build small, test honestly, repair locally, share what fails as well as what works.
+      </div>
+    </section>
+
+    <section id="tools" aria-labelledby="tools-title">
+      <h2 id="tools-title">Tools in this Forge</h2>
+
+      <ul class="tool-list">
+        <li>
+          <strong><a href="garden-raft/index.html">Garden Raft · v0.1</a></strong>
+          A low-tech platform for working where land and water meet. Not primarily
+          a boat, but a mediating surface for garden tending, water-edge repair,
+          wetland observation, field learning, and community resilience.
+          <br />
+          <span class="tool-tag">water-edge repair</span>
+        </li>
+
+        <li>
+          <strong><a href="spoovel/index.html">The Spoovel · v0</a></strong>
+          A low-tech, field-repairable sack-filling and material-handling tool path.
+          The current v0 begins with a bag-holder, chute, and wheel-frame, then expands
+          only after testing against a hand-filled baseline.
+          <br />
+          <span class="tool-tag">material handling</span>
+        </li>
+
+        <li>
+          <strong><a href="signal-finder/index.html">Signal Finder + CodeTape · v0.1</a></strong>
+          A commons seed for emergency signal-finding, paper-first communication,
+          local stewardship, offline community memory, and disaster response coordination.
+          <br />
+          <span class="tool-tag">local memory</span>
+        </li>
+
+        <li>
+          <strong><a href="rescue-thread/index.html">Rescue Thread Platform · v0.2</a></strong>
+          A working seed for establishing contact with trapped people when direct access
+          is unsafe, blocked, or impossible. Signal Finder locates; Rescue Thread reaches.
+          <br />
+          <span class="tool-tag">contact rescue</span>
+        </li>
+
+        <li>
+          <strong><a href="ocean-listening-network/index.html">Ocean Listening Network · v0.2</a></strong>
+          A story-rooted commons tool concept for listening to marine life, witnessing harm,
+          and helping communities respond without turning the ocean into another extracted dataset.
+          <br />
+          <span class="tool-tag">ocean witness</span>
+        </li>
+
+        <li>
+          <strong>Additional tools</strong>
+          More tools will be added as they become clear enough to share, test, repair,
+          and responsibly steward in public.
+          <br />
+          <span class="tool-tag">emerging seeds</span>
+        </li>
+      </ul>
+    </section>
+
+    <section id="garden-raft" aria-labelledby="garden-raft-title">
+      <h2 id="garden-raft-title">Garden Raft</h2>
+
+      <p>
+        Garden Raft is a low-tech commons module for water-edge work. It belongs
+        here because it is not only a raft design. It is a way to give a person,
+        a tool, and a living edge a stable place to meet.
+      </p>
+
+      <div class="principle">
+        <strong>Root note:</strong>
+        Garden Raft is not primarily a boat. It is a mediating platform.
+      </div>
+
+      <p>
+        The raft may support pond work, flooded gardens, wetland observation,
+        floating nursery experiments, school field studies, irrigation-edge access,
+        or habitat repair. Its first responsibility is not speed. Its first
+        responsibility is stability, repairability, and care.
+      </p>
+
+      <div class="path">
+        Stability before mobility.<br />
+        Repair before elegance.<br />
+        A raft is a place to stand when the edge is changing.
+      </div>
+
+      <p>
+        <a href="garden-raft/index.html">Open the Garden Raft page</a>
+      </p>
+    </section>
+
+    <section id="spoovel" aria-labelledby="spoovel-title">
+      <h2 id="spoovel-title">The Spoovel</h2>
+
+      <p>
+        The Spoovel is a different kind of commons tool: not a signal flare, but an
+        engineering path. It must earn each layer through measurement, field testing,
+        repair, and repeatable use.
+      </p>
+
+      <p>
+        Its current path is:
+      </p>
+
+      <div class="path">
+        Measure → Build v0 → Test → Repair → Retest → Expand
+      </div>
+
+      <p>
+        Start with the v0 physical schematic and field test sheet before adding winches,
+        conveyors, tie-off stations, CodeTape integration, Signal Finder coordination,
+        or AI-assisted planning.
+      </p>
+
+      <p>
+        <a href="spoovel/index.html">Open the Spoovel page</a>
+      </p>
+    </section>
+
+    <section id="signal-finder" aria-labelledby="signal-finder-title">
+      <h2 id="signal-finder-title">Signal Finder + CodeTape</h2>
+
+      <p>
+        Signal Finder + CodeTape is a commons seed for emergency communication and
+        local memory. It begins not with a drone or dashboard, but with a simple
+        question:
+      </p>
+
+      <div class="path">
+        What would make this useful, safe, and locally trustworthy before the next
+        outage, fire, flood, or earthquake?
+      </div>
+
+      <p>
+        The first usable footpath is the paper tag system: eye-readable first,
+        machine-readable second, human dignity always.
+      </p>
+
+      <p>
+        <a href="signal-finder/index.html">Open the Signal Finder + CodeTape page</a>
+      </p>
+
+      <div class="field-grid">
+        <figure>
+          <img
+            src="assets/signal_finder_codetape_accessible_schematic.svg"
+            alt="Accessible schematic showing Signal Finder, CodeTape, paper tags, local stewards, responders, and the simple v0 prototype loop."
+          />
+          <figcaption>
+            Signal Finder + CodeTape field schematic. The first prototype loop is
+            simple: handheld scanner, paper tag, local steward.
+          </figcaption>
+        </figure>
+
+        <figure>
+          <img
+            src="assets/paper_tag_taxonomy_v01_card10_corrected.svg"
+            alt="Paper Tag Taxonomy field sheet with twelve emergency tags including water needed, medical need, checked OK, do not enter, safe route, shelter, food, power needed, animal present, elder or disabled person present, children present, and message left here."
+          />
+          <figcaption>
+            Paper Tag Taxonomy v0.1. Eye-readable first. Machine-readable second.
+            Human dignity always.
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="rescue-thread" aria-labelledby="rescue-thread-title">
+      <h2 id="rescue-thread-title">Rescue Thread Platform</h2>
+
+      <p>
+        Rescue Thread belongs beside Signal Finder, but it is not the same tool.
+        Signal Finder asks where the signal is. Rescue Thread asks how contact can
+        be established once someone may be there.
+      </p>
+
+      <div class="principle">
+        <strong>Root note:</strong>
+        Signal Finder locates. Rescue Thread reaches.
+      </div>
+
+      <p>
+        Rescue Thread is a working seed for reaching trapped people when direct
+        access is unsafe, blocked, unstable, or impossible. The core idea is a
+        tethered signal line that can be felt, pulled, marked, followed, and answered.
+        The line becomes a shared thread between the person trying to reach and
+        the person waiting to be reached.
+      </p>
+
+      <div class="path">
+        Find the signal → send the thread → make contact → receive response → guide return
+      </div>
+
+      <p>
+        Its family placement is clear: Signal Finder is the sensing layer, CodeTape
+        is the language layer, SignalTether is the contact layer, Spoovel is the
+        deployment and interface layer, and AI support, if present, must remain a
+        coordinator rather than a commander.
+      </p>
+
+      <p>
+        <a href="rescue-thread/index.html">Open the Rescue Thread Platform page</a>
+      </p>
+    </section>
+
+    <section id="ocean-listening-network" aria-labelledby="ocean-listening-network-title">
+      <h2 id="ocean-listening-network-title">Ocean Listening Network</h2>
+
+      <p>
+        Ocean Listening Network is a story-rooted commons tool concept for listening
+        to marine life, witnessing harm, and helping communities respond with care.
+        It belongs in Fox’s Anvil because the listening ethic is not decoration.
+        It is the design constraint.
+      </p>
+
+      <div class="principle">
+        <strong>Root note:</strong>
+        Listen without turning the ocean into another extracted dataset.
+      </div>
+
+      <p>
+        The network may eventually include local listening stations, community
+        witness logs, marine-life signal awareness, whale-safe alerts, and repair
+        pathways that help people notice what is happening in the water without
+        enclosing the knowledge in a distant platform.
+      </p>
+
+      <div class="path">
+        Listen → witness → protect → repair → return knowledge to the commons
+      </div>
+
+      <p>
+        This is not a dashboard for owning the sea. It is a threshold page for
+        asking how communities might listen, respond, and remember with humility.
+      </p>
+
+      <p>
+        <a href="ocean-listening-network/index.html">Open the Ocean Listening Network page</a>
+      </p>
+    </section>
+
+    <section aria-labelledby="relation-title">
+      <h2 id="relation-title">Relation to MythWear</h2>
+
+      <p>
+        MythWear Commons focuses on body-scale tools, garments, and movement
+        companions. The Fox’s Anvil focuses on land-scale, water-edge, field-scale,
+        and infrastructure-scale tools.
+      </p>
+
+      <p>
+        They are siblings: one close to the skin, one close to the ground.
+      </p>
+    </section>
+
+    <section id="license" aria-labelledby="license-title">
+      <h2 id="license-title">License & Attribution</h2>
+
+      <div class="license-box">
+        <p>
+          <strong>Commons materials:</strong>
+          text, documentation, field notes, diagrams, and educational materials are
+          shared under <strong>Creative Commons Attribution 4.0 International</strong>
+          unless otherwise noted.
+        </p>
+
+        <p>
+          <strong>Code:</strong>
+          site code, scripts, and software-like materials are shared under the
+          <strong>MIT License</strong> unless otherwise noted.
+        </p>
+
+        <p>
+          No patents. No enclosure. No surveillance use. No extractive data capture.
+          No proprietary dependency where avoidable. Keep local control, consent,
+          repairability, and community stewardship at the center.
+        </p>
+      </div>
+
+      <h3>Attribution</h3>
+
+      <p>
+        Concept, stewardship, and originating frame:
+        <strong>Jacobo Hernández Durbin / The Fox’s Anvil</strong>.
+      </p>
+
+      <p>
+        Developed with AI-assisted drafting and schematic support from Claude and
+        ChatGPT / Elumannín, with human review, correction, and stewardship by
+        Jacobo Hernández Durbin.
+      </p>
+
+      <p class="note">
+        Suggested attribution line:
+        <br />
+        <code>
+          The Fox’s Anvil: Open Resilience Tools, by Jacobo Hernández Durbin.
+          Shared under CC BY 4.0 for documentation and MIT for code, unless otherwise noted.
+        </code>
+      </p>
+    </section>
+
+    <footer>
+      <p>
+        Shared in the spirit of the Commons. Build with care. Test honestly.
+        Use with responsibility. Share improvements.
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
