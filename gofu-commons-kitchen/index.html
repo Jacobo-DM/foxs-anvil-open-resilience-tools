@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gofu Commons Kitchen · The Fox’s Anvil</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+:root {
+  --bg: #121212;
+  --panel: #181818;
+  --panel-soft: #202020;
+  --text: #e8e5dd;
+  --muted: #b8b2a7;
+  --line: #383838;
+  --link: #9cd3ff;
+  --accent: #f0d48a;
+  --water: #8fc7d8;
+  --leaf: #b7d99a;
+  --max: 820px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(240, 212, 138, 0.08), transparent 32rem),
+    radial-gradient(circle at bottom right, rgba(143, 199, 216, 0.07), transparent 28rem),
+    var(--bg);
+  line-height: 1.75;
+  font-size: 18px;
+}
+header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(15, 15, 15, 0.96);
+  padding: 14px 20px;
+}
+header .wrap, main, footer {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+nav {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  font-size: 0.95rem;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+main { padding: 42px 20px 56px; }
+h1, h2, h3 { line-height: 1.25; }
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.03em;
+}
+h2 {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 1.55rem;
+}
+h3 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+p, li { margin-bottom: 1rem; }
+.lede {
+  color: #f1eee6;
+  font-size: 1.16rem;
+}
+.kicker {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.note, .muted { color: var(--muted); }
+.card, blockquote {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+}
+.card {
+  padding: 1.05rem 1.15rem;
+  margin: 1.25rem 0;
+}
+blockquote {
+  margin: 1.35rem 0;
+  padding: 1.05rem 1.2rem;
+  border-left: 4px solid var(--accent);
+}
+blockquote p {
+  margin: 0.3rem 0;
+  font-size: 1.08rem;
+}
+.path {
+  border-left: 4px solid var(--water);
+}
+.seed {
+  border-left: 4px solid var(--leaf);
+}
+.outward {
+  border: 1px dashed var(--leaf);
+  background: #14170f;
+}
+ul { padding-left: 1.35rem; }
+footer {
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding: 18px 20px 34px;
+  font-size: 0.92rem;
+}
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  main { padding-top: 30px; }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <strong>The Fox’s Anvil</strong>
+      <nav aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#tools">Tools</a>
+        <a href="../civic-care-commons/index.html">Civic Care Commons</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="kicker">Seed note · Commons food</p>
+    <h1>Gofu Commons Kitchen</h1>
+
+    <p class="lede">
+      A small food-resilience offering rooted in simple nourishment, local
+      adaptation, shared kitchens, and commons care. Gofu begins as a humble
+      bean-based preparation, but opens toward field kitchens, child care,
+      community meals, and dignified food support.
+    </p>
+
+    <div class="card seed">
+      <strong>Root note:</strong>
+      Food becomes infrastructure when it helps people stay, learn, gather,
+      recover, and care for one another.
+    </div>
+
+    <h2>Why it belongs in Fox’s Anvil</h2>
+
+    <p>
+      Resilience is not only rescue, sensors, rafts, and signal systems. It is
+      also food, dignity, and care. Gofu is the soft, nourishing tool in this
+      forge: a teachable, repairable food practice that supports community
+      kitchens, camp kitchens, the Civic Care Commons, and any gathering where
+      nourishment is part of staying resilient together.
+    </p>
+
+    <h2>What lives here, and what lives elsewhere</h2>
+
+    <p>
+      This page is a nest, not the whole tree. The Fox’s Anvil holds a short
+      landing that places Gofu in the resilience ecosystem. The fuller
+      Gofu Commons — the case for why Gofu matters, how to make it, recipes,
+      fermentation, garden stories, seasonal offerings, the declaration, and the
+      license — lives in its own canonical home.
+    </p>
+
+    <div class="card outward">
+      <strong>Visit the fuller Gofu Commons:</strong>
+      <br />
+      <!-- TODO: confirm canonical URL before publishing.
+           Repo name is "gofu_commons"; MythWear uses jacobo-dm.github.io. -->
+      <a href="https://jacobo-dm.github.io/gofu_commons/" target="_blank" rel="noopener noreferrer">
+        Gofu Commons — why Gofu, how to make it, recipes, fermentation, stories, declaration, and license
+      </a>
+    </div>
+
+    <h2>What Gofu carries</h2>
+
+    <ul>
+      <li>Commons food and simple nourishment that ordinary kitchens can make.</li>
+      <li>Community kitchens, camp kitchens, and field kitchens.</li>
+      <li>Child care and the Civic Care Commons, where shared meals support shared care.</li>
+      <li>Food sovereignty and local adaptation to place, climate, and culture.</li>
+      <li>Repairable food practice: teachable, affordable, and honestly tested.</li>
+    </ul>
+
+    <div class="card path">
+      Start with one clean batch.<br />
+      Feed real people.<br />
+      Record what worked.<br />
+      Record what failed.<br />
+      Make the next batch easier to teach.
+    </div>
+
+    <h2>Canonical-repository principle</h2>
+
+    <p>
+      The canonical home of Gofu Commons is its own repository. This Anvil page is
+      a nest that points outward. Mirrors, excerpts, and local adaptations are
+      welcome, but they should defer to the canonical Gofu Commons as the reference
+      version, and link back to it.
+    </p>
+
+    <h2>Commons relation</h2>
+
+    <p>
+      Gofu connects directly to the
+      <a href="../civic-care-commons/index.html">Civic Care Commons</a>, to garden
+      gatherings, school field days, neighborhood kitchens, and resilience events.
+      It is a food seed and a coordination seed at once: a practical thing for
+      kitchens, caregivers, gardeners, teachers, and neighbors to meet around.
+    </p>
+
+    <blockquote>
+      <p>The offering is small on purpose.</p>
+      <p>If it works, it can travel.</p>
+    </blockquote>
+  </main>
+
+  <footer>
+    Shared in the spirit of the Commons. Cook with care. Test honestly. Use with responsibility. Share improvements.
+  </footer>
+</body>
+</html>
