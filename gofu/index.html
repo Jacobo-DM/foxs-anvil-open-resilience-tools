@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Gofu · Commons Kitchen Offering</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+:root {
+  --bg: #121212;
+  --panel: #181818;
+  --panel-soft: #202020;
+  --text: #e8e5dd;
+  --muted: #b8b2a7;
+  --line: #383838;
+  --link: #9cd3ff;
+  --accent: #f0d48a;
+  --water: #8fc7d8;
+  --leaf: #b7d99a;
+  --max: 820px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(240, 212, 138, 0.08), transparent 32rem),
+    radial-gradient(circle at bottom right, rgba(143, 199, 216, 0.07), transparent 28rem),
+    var(--bg);
+  line-height: 1.75;
+  font-size: 18px;
+}
+header {
+  border-bottom: 1px solid var(--line);
+  background: rgba(15, 15, 15, 0.96);
+  padding: 14px 20px;
+}
+header .wrap, main, footer {
+  max-width: var(--max);
+  margin: 0 auto;
+}
+nav {
+  margin-top: 0.35rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1rem;
+  font-size: 0.95rem;
+}
+a { color: var(--link); text-decoration: none; }
+a:hover, a:focus { text-decoration: underline; }
+main { padding: 42px 20px 56px; }
+h1, h2, h3 { line-height: 1.25; }
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.03em;
+}
+h2 {
+  margin-top: 3rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  font-size: 1.55rem;
+}
+h3 {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+p, li { margin-bottom: 1rem; }
+.lede {
+  color: #f1eee6;
+  font-size: 1.16rem;
+}
+.kicker {
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.note, .muted { color: var(--muted); }
+.card, blockquote {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--panel);
+}
+.card {
+  padding: 1.05rem 1.15rem;
+  margin: 1.25rem 0;
+}
+blockquote {
+  margin: 1.35rem 0;
+  padding: 1.05rem 1.2rem;
+  border-left: 4px solid var(--accent);
+}
+blockquote p {
+  margin: 0.3rem 0;
+  font-size: 1.08rem;
+}
+.path {
+  border-left: 4px solid var(--water);
+}
+.seed {
+  border-left: 4px solid var(--leaf);
+}
+ul { padding-left: 1.35rem; }
+footer {
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+  padding: 18px 20px 34px;
+  font-size: 0.92rem;
+}
+@media (max-width: 560px) {
+  body { font-size: 17px; }
+  main { padding-top: 30px; }
+}
+</style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <strong>The Fox’s Anvil</strong>
+      <nav aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#tools">Tools</a>
+        <a href="../civic-care-commons/index.html">Civic Care Commons</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <p class="kicker">Seed note · Commons food</p>
+    <h1>Gofu — Commons Kitchen Offering</h1>
+
+    <p class="lede">
+      Gofu is a small food commons seed: a simple, adaptable, plant-based kitchen offering
+      related to chickpea tofu and sesame-tofu traditions, intended for field kitchens,
+      school kitchens, care spaces, camps, gardens, and community gatherings.
+    </p>
+
+    <div class="card seed">
+      <strong>Root note:</strong>
+      Food becomes infrastructure when it helps people stay, learn, gather, recover,
+      and care for one another.
+    </div>
+
+    <h2>Why it belongs in Fox’s Anvil</h2>
+
+    <p>
+      Fox’s Anvil holds open resilience tools. Some tools are rafts, tethers, signal
+      systems, or field schematics. Some are quieter: a recipe that can be taught,
+      adapted, repaired, and carried into a kitchen where people need nourishment
+      without spectacle.
+    </p>
+
+    <p>
+      Gofu belongs here as a commons food offering because it can support care work:
+      child-care meals, field days, community gardens, emergency kitchens, after-school
+      gatherings, and low-cost experiments in nourishment that do not require expensive
+      equipment or proprietary ingredients.
+    </p>
+
+    <h2>What it is</h2>
+
+    <p>
+      Gofu is not a brand and not a product. It is a working name for a simple food pathway:
+      a flexible, teachable preparation that can be tested in small kitchens, documented
+      clearly, adapted locally, and shared under commons terms.
+    </p>
+
+    <div class="card path">
+      Start with one clean batch.<br />
+      Feed real people.<br />
+      Record what worked.<br />
+      Record what failed.<br />
+      Make the next batch easier to teach.
+    </div>
+
+    <h2>Design constraints</h2>
+
+    <ul>
+      <li>Use ordinary kitchen tools whenever possible.</li>
+      <li>Keep ingredients affordable, legible, and locally adaptable.</li>
+      <li>Document allergen risks clearly, especially sesame, soy, nuts, and gluten where relevant.</li>
+      <li>Make the recipe teachable by a community cook, student, elder, caregiver, or volunteer.</li>
+      <li>Preserve dignity: food offered through the commons should not feel like charity leftovers.</li>
+      <li>Share failures honestly so other kitchens do not have to repeat them.</li>
+    </ul>
+
+    <h2>Possible first test</h2>
+
+    <p>
+      A first public version could be a small kitchen field test: one base recipe,
+      one flavor variation, one simple serving context, and one page of notes on cost,
+      time, texture, acceptance, allergies, cleanup, and what should change next.
+    </p>
+
+    <div class="card">
+      <strong>v0 question:</strong>
+      Can a small kitchen make one batch of gofu that is affordable, nourishing,
+      pleasant to eat, easy to explain, and easy to repeat?
+    </div>
+
+    <h2>Commons relation</h2>
+
+    <p>
+      Gofu can connect directly to Civic Care Commons, Garden Raft gatherings,
+      school field days, neighborhood kitchens, and resilience events. It is a food
+      seed, but it is also a coordination seed: a way for kitchens, caregivers,
+      gardeners, teachers, and neighbors to meet around something practical.
+    </p>
+
+    <blockquote>
+      <p>The offering is small on purpose.</p>
+      <p>If it works, it can travel.</p>
+    </blockquote>
+  </main>
+
+  <footer>
+    Shared in the spirit of the Commons. Build with care. Test honestly. Use with responsibility.
+  </footer>
+</body>
+</html>
